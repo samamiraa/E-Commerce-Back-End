@@ -23,7 +23,13 @@ router.get('/:id', async (req, res) => {
     const oneTag = await Tag.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
+
+    if (!oneTag) {
+      res.status(404).json({ message: 'Tag does not exist!' });
+      return;
+    } else {
     res.status(200).json(oneTag);
+    }
   } catch (err) {
     res.status(500).json(err);
   };
@@ -54,14 +60,34 @@ router.put('/:id', async (req, res) => {
         },
       },
     )
+    if (!updateTag) {
+      res.status(404).json({ message: 'Tag does not exist!' });
+      return;
+    } else {
     res.status(200).json(updateTag);
+    };
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
+  try {
+    const deleteTag = await Tag.destroy({
+      where: {
+        tag_id: req.params.id,
+      }
+    })
+    if (!deleteTag) {
+      res.status(404).json({ message: 'Tag does not exist!' });
+      return;
+    } else {
+    res.status(200).json(deleteTag);
+    };
+  } catch (err) {
+    res.status(500).json(err);
+  };
 });
 
 module.exports = router;

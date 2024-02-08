@@ -25,7 +25,12 @@ router.get('/:id', async (req, res) => {
     const findOneProduct = await Product.findByPk(req.params.id, {
       include: [{ model: Category}, { model: Tag }],
     })
+    if (!findOneProduct) {
+      res.status(404).json({ message: 'Product does not exist!' });
+      return;
+    } else {
     res.status(200).json(findOneProduct);
+    };
   } catch (err) {
     res.status(500).json(err);
   };
@@ -117,7 +122,12 @@ router.delete('/:id', async (req, res) => {
         product_id: req.params.id,
       },
     })
+    if (!deleteProduct) {
+      res.status(404).json({ message: 'Product does not exist!' });
+      return;
+    } else {
     res.status(200).json(deleteProduct);
+    };
   } catch (err) {
     res.status(500).json(err);
   };

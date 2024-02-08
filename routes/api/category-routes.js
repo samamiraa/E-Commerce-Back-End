@@ -23,7 +23,12 @@ router.get('/:id', async (req, res) => {
     const oneCategory = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
     });
+    if (!oneCategory) {
+      res.status(404).json({ message: 'Category does not exist!' });
+      return;
+    } else {
     res.status(200).json(oneCategory);
+    };
   } catch (err) {
     res.status(500).json(err);
   };
@@ -54,7 +59,12 @@ router.put('/:id', async (req, res) => {
         },
       },
     )
+    if (!updateCategory) {
+      res.status(404).json({ message: 'Category does not exist!' });
+      return;
+    } else {
     res.status(200).json(updateCategory);
+    };
   } catch (err) {
     res.status(500).json(err);
   }
@@ -68,7 +78,12 @@ router.delete('/:id', async (req, res) => {
         category_id: req.params.id,
       }
     })
-    res.status(200).json(deleteCategory)
+    if (!deleteCategory) {
+      res.status(404).json({ message: 'Category does not exist!' });
+      return;
+    } else {
+    res.status(200).json(deleteCategory);
+    };
   } catch (err) {
     res.status(500).json(err);
   };
