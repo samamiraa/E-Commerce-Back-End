@@ -4,12 +4,7 @@ Walkthrough Video👇🏼<br>
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+E-commerce backend built using sequalize, express, SQL and node. My motivation to complete this project was to learn how sequalize can simplify working with data with mySQL. I also learned how when paired with express, each route can be connected with SQL to accomplish different things. 
 
 ## Table of Contents (Optional)
 
