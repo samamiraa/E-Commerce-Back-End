@@ -38,7 +38,7 @@ Product.init(
       allowNull: false,
       references: {
         model: 'category',
-        key: 'category_id',
+        key: 'id',
       },
       validate: {
         isNumeric: true,
