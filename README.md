@@ -6,9 +6,7 @@ Walkthrough Video👇🏼<br>
 
 E-commerce backend built using sequalize, express, SQL and node. My motivation to complete this project was to learn how sequalize can simplify working with data with mySQL. I also learned how when paired with express, each route can be connected with SQL to accomplish different things. 
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -35,11 +33,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+I always refer to my class activities, but thank you to a few people who helped me with my assignment. Thank you to my colleagues Shawn and Arnaldo for answering a couple of questions regarding myy constraint error I was getting. Thank you to my teachers Saraubh and Daniel who helped me figure out my foreign key issue. Finally, thank you to my tutor Andrew, who always answers the thousands of questions I have for him every session, I appreciate his abundance of patience.
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-If you followed tutorials, include links to those here as well.
 
 ## License
 
@@ -59,4 +55,4 @@ N/A
 
 ## Tests
 
-Go the extra mile and write tests for your application. 
+Download required packages. Once downloaded, run 'node server.js in terminal, when it confirms its listening, go to insomnia or postman and test out each route. 
