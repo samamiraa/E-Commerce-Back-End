@@ -1,5 +1,7 @@
+//* imports category model
 const { Category } = require('../models');
 
+//* prepopulated category data
 const categoryData = [
   {
     category_name: 'Shirts',
@@ -18,6 +20,8 @@ const categoryData = [
   },
 ];
 
+//* function to bulk create categories
 const seedCategories = () => Category.bulkCreate(categoryData);
 
+//*exports data
 module.exports = seedCategories;

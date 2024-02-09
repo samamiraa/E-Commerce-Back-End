@@ -1,5 +1,7 @@
+//* imports product model
 const { Product } = require('../models');
 
+//* prepopulated product data
 const productData = [
   {
     product_name: 'Plain T-Shirt',
@@ -32,7 +34,8 @@ const productData = [
     category_id: 2,
   },
 ];
-
+//* function to bulk create products
 const seedProducts = () => Product.bulkCreate(productData);
 
+//* exports data
 module.exports = seedProducts;
